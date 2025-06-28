@@ -1,6 +1,7 @@
 'use client';
 
 import Navbar from "./components/Navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,10 +13,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8">
           <div className="max-w-2xl">
             <h1 className="text-7xl md:text-9xl font-bold text-black mb-6">
-              Hi, I'm Sid
+              Hi, I&apos;m Sid
             </h1>
             <p className="text-xl md:text-3xl text-gray-600 mb-8">
-              I'm a Software Engineer who loves to create, learn, and build.
+              I&apos;m a Software Engineer who loves to create, learn, and build.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* <button className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
@@ -43,9 +44,11 @@ export default function Home() {
                   S
                 </div>
                 {/* Uncomment and replace the src with your actual image path */}
-                <img 
+                <Image 
                   src="/home/profilepic.png" 
                   alt="Sid Mekarao" 
+                  width={384}
+                  height={384}
                   className="w-full h-full object-cover object-left"
                   style={{ transform: 'translateX(-30px)' }}
                 />
@@ -56,8 +59,8 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              I'm a Masters student at Cal Poly, San Luis Obispo, pursuing a degree in Computer Science. 
-              I'm interested in software development, machine learning, and artificial intelligence for real-world applications.
+              I&apos;m a Masters student at Cal Poly, San Luis Obispo, pursuing a degree in Computer Science. 
+              I&apos;m interested in software development, machine learning, and artificial intelligence for real-world applications.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">

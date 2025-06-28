@@ -97,7 +97,7 @@ export default function Contact() {
           >
             {/* Contact Info */}
             <motion.div variants={fadeInUp}>
-              <h3 className="text-2xl font-bold text-black mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-black mb-6">Let&apos;s Connect</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
@@ -181,7 +181,7 @@ export default function Contact() {
                 {/* Status Messages */}
                 {submitStatus === 'success' && (
                   <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </div>
                 )}
                 {submitStatus === 'error' && (
