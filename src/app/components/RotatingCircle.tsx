@@ -50,7 +50,7 @@ const RotatingCircle = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="text-2xl">🍎</span>
+            <span className="text-2xl">👋</span>
           </motion.div>
         </div>
       </motion.div>
