@@ -44,15 +44,15 @@ export default function Contact() {
     try {
       // You'll need to replace these with your actual EmailJS credentials
       const result = await emailjs.send(
-        'service_rqlxqvi', // Replace with your EmailJS service ID
-        'template_dk27xoe', // Replace with your EmailJS template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Replace with your EmailJS service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Replace with your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_name: 'Sid',
         },
-        'X0d_fLqHY-96ghTuy' // Replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Replace with your EmailJS public key
       );
 
       if (result.status === 200) {

@@ -29,6 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Sid Meka</title>
+        <meta name="description" content="Sid Meka - Software Engineer and Masters Student" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
       >
