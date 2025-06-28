@@ -2,8 +2,36 @@
 
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
 
 export default function Gallery() {
+  const [images, setImages] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Function to get all images from the gallery folder
+    const loadGalleryImages = async () => {
+      try {
+        const response = await fetch('/api/gallery');
+        const data = await response.json();
+        
+        if (response.ok) {
+          setImages(data.images);
+        } else {
+          console.error('Failed to load gallery images');
+          setImages([]);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error('Error loading gallery images:', error);
+        setImages([]);
+        setLoading(false);
+      }
+    };
+
+    loadGalleryImages();
+  }, []);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -17,6 +45,17 @@ export default function Gallery() {
       }
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="pt-20 pb-16 bg-gray-50 flex items-center justify-center">
+          <div className="text-xl text-gray-600">Loading gallery...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -44,21 +83,30 @@ export default function Gallery() {
             initial="initial"
             animate="animate"
           >
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {images.map((imagePath, index) => (
               <motion.div 
-                key={item} 
+                key={index} 
                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">Project {item}</span>
-                </div>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                  <button className="opacity-0 group-hover:opacity-100 bg-white text-black px-4 py-2 rounded-lg font-medium transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                    View Details
-                  </button>
+                <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black overflow-hidden">
+                  <img 
+                    src={imagePath} 
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      // Fallback to placeholder if image doesn't load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.innerHTML = `
+                        <div class="w-full h-full flex items-center justify-center">
+                          <span class="text-white text-lg font-medium">Image ${index + 1}</span>
+                        </div>
+                      `;
+                    }}
+                  />
                 </div>
               </motion.div>
             ))}

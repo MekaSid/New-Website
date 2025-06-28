@@ -51,36 +51,48 @@ export default function Timeline() {
             >
               {[
                 {
-                  year: "2023",
-                  title: "Senior Developer",
-                  company: "Tech Corp",
-                  description: "Led development of enterprise applications and mentored junior developers."
+                  year: "June 2025 - Present",
+                  title: "Software Engineer Intern",
+                  company: "Mercury Insurance",
+                  description: "Resolved critical bugs and improved user experience for the Direct Sales team."
                 },
                 {
-                  year: "2021",
-                  title: "Full Stack Developer",
-                  company: "Startup Inc",
-                  description: "Built scalable web applications using modern technologies and best practices."
+                  year: "June 2025 - Present",
+                  title: "Freelance Software Developer",
+                  company: "Local Business and Professors",
+                  description: "Creating website for local business and professors to showcase their work and services."
                 },
                 {
-                  year: "2019",
-                  title: "Junior Developer",
-                  company: "Digital Agency",
-                  description: "Started my career building responsive websites and learning new technologies."
+                  year: "June 2025 - Present",
+                  title: "Master of Science - Computer Science",
+                  company: "California Polytechnic State University - San Luis Obispo",
+                  description: "Conducting research on interpretable, multimodal AI systems to predict wildfire risk using spatial, temporal, and environmental data."
                 },
                 {
-                  year: "2018",
-                  title: "Computer Science Degree",
-                  company: "University",
-                  description: "Graduated with honors in Computer Science with focus on web development."
+                  year: "September 2024 - June 2025",
+                  title: "Full Stack Software Developer",
+                  company: "Creek Lands Conservation",
+                  description: "Deployed full-stack application to streamline operations, automate waivers/payments, and support events"
+                },
+                {
+                  year: "November 2023 - June 2025",
+                  title: "Student IT Technician",
+                  company: "Administration - Cal Poly",
+                  description: "Resolved computing issues for faculty and staff."
+                },
+                {
+                  year: "September 2022 - Present",
+                  title: "Bachelor of Science - Computer Science",
+                  company: "California Polytechnic State University - San Luis Obispo",
+                  description: "Studying Computer Science with a concentration in Artificial Intelligence and Machine Learning with a minor in Statistics"
                 }
               ].map((item, index) => (
                 <motion.div 
                   key={index} 
-                  className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                  className={`relative flex items-center ${index % 2 === 1 ? 'justify-start' : 'justify-end'}`}
                   variants={fadeInUp}
                 >
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div className={`w-5/12 ${index % 2 === 1 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <motion.div 
                       className="bg-white p-6 rounded-lg shadow-lg border border-gray-200"
                       whileHover={{ scale: 1.02 }}

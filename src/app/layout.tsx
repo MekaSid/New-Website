@@ -5,7 +5,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import RotatingCircle from "./components/RotatingCircle";
-import DynamicCursor from "./components/DynamicCursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,7 +44,6 @@ export default function RootLayout({
           </motion.div>
         </AnimatePresence>
         <RotatingCircle />
-        <DynamicCursor />
       </body>
     </html>
   );
