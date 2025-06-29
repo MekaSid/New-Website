@@ -118,7 +118,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-20">
           <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-              Master's Research
+              Master&apos;s Research
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
             My research focuses on developing interpretable, multimodal AI systems to predict wildfire risk using spatial, 
@@ -130,7 +130,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-white mb-4">Research Areas</h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
-                    <span className="text-blue-400 mr-3">•</span>
+                    <span className="text-blue-400 mr-3">•</span>s
                     <span>Computer Vision & Image Processing</span>
                   </li>
                   <li className="flex items-start">
