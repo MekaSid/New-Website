@@ -118,7 +118,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-20">
           <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-              Masters Research
+              Master's Research
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12">
             My research focuses on developing interpretable, multimodal AI systems to predict wildfire risk using spatial, 
